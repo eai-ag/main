@@ -15,13 +15,13 @@ services:
     network_mode: "host"
     restart: always
 
-  studio:
-    image: ghcr.io/helix-robotics-ag/studio:latest
-    build:
-      context: studio
-      dockerfile: Dockerfile
-    volumes:
-      - ./config/studio/layout.json:/foxglove/default-layout.json
-    ports:
-      - 8080:8080
-    restart: always
+  # studio:
+  #   image: ghcr.io/eai-ag/studio:latest
+  #   build:
+  #     context: studio
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./config/studio/layout.json:/foxglove/default-layout.json
+  #   ports:
+  #     - 8080:8080
+  #   restart: always

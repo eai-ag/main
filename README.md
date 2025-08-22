@@ -9,7 +9,7 @@
 - Create the robot config folder on the Pi: `mkdir ~/.config/helix`
 
 ## Installing the Helix repos
-- Clone this repo, for example into `~/helix-robotics-ag/`
+- Clone this repo, for example into `~/eai-ag/`
 - In the repo, initialise and update all its submodules recursively:
 ```
 $ cd main/
@@ -38,7 +38,7 @@ $ git submodule update --init --recursive
 It is possible to run the system in 'dummy mode' for testing without connecting to the robot/motor hardware. To do this, follow the above installation instructions on your (linux) system, then uncomment the line `<param name="use_dummy">true</param>` in `/ros-helix/helix_description/urdf/helix.ros2_control.xacro`, and rebuild the `ros-helix` image: `$ docker compose build ros-helix`. In this mode, the system will not communicate with the motors, but will just update the motor joint states directly to the received commands. All other parts of the system should still work, you will just need to replace the Raspberry Pi's IP with `localhost` when using the Foxglove or `roslibpy` interface.
 
 # I want to control the robot from ROS, Foxglove or Python
-Assuming the Pi has already been set up as above, see the instructions in the [ros-helix repo](https://github.com/helix-robotics-ag/ros-helix/tree/main) README.
+Assuming the Pi has already been set up as above, see the instructions in the [ros-helix repo](https://github.com/eai-ag/ros-helix/tree/main) README.
 
 # I want to develop code inside these repositories to run on the robot controller itself
 Note: this is not particularly straightforward, if you only need to access the robot state and send commands, consider doing it externally through `roslibpy`. If you're sure it needs to be incorporated into the embedded system, it may still be easier to prototype something externally first as well. A reasonable familiarity with ROS2 and git are prerequisite, as well as some understanding of Docker. For more information about the repos and containers, see the [separate guide](Devguide.md).
