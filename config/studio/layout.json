@@ -1,87 +1,15 @@
 {
   "configById": {
-    "Plot!4c9yiqa": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[0]",
-          "enabled": true,
-          "color": "#2247b7"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[1]",
-          "enabled": true,
-          "color": "#389dff"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[2]",
-          "enabled": true,
-          "color": "#7eedff"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[3]",
-          "enabled": true,
-          "color": "#ec2525"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[4]",
-          "enabled": true,
-          "color": "#fea234"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[5]",
-          "enabled": true,
-          "color": "#fce96c"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[6]",
-          "enabled": true,
-          "color": "#079400"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[7]",
-          "enabled": true,
-          "color": "#53e00c"
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/tendon_transmission_node/tendon_states.position[8]",
-          "enabled": true,
-          "color": "#90ff8b"
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "none",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 30,
-      "maxYValue": 0.03,
-      "minYValue": -0.2
-    },
-    "Table!sp3lpe": {
-      "topicPath": "/tendon_transmission_node/tendon_states"
-    },
-    "3D!2mysn4t": {
+    "3D!1jl2if2": {
       "cameraState": {
         "perspective": true,
-        "distance": 0.42687467691443554,
-        "phi": 82.57187591339104,
-        "thetaOffset": 91.87151100468688,
+        "distance": 2.5702431313009164,
+        "phi": 61.04313982489265,
+        "thetaOffset": 54.51701821019869,
         "targetOffset": [
-          -0.6299281534019243,
-          0.03631547125513165,
-          -0.22
+          0.7719406050678065,
+          0.6925529326931978,
+          4.0568232423718164e-18
         ],
         "target": [
           0,
@@ -101,188 +29,12 @@
       "followMode": "follow-pose",
       "scene": {
         "transforms": {
-          "showLabel": true,
-          "enablePreloading": true,
-          "lineWidth": 0.5,
-          "axisScale": 0.5,
-          "labelSize": 0.02
-        }
+          "showLabel": false,
+          "axisScale": 0.5
+        },
+        "enableStats": true
       },
       "transforms": {
-        "frame:world": {
-          "visible": true
-        },
-        "frame:Index_Base_1": {
-          "visible": false
-        },
-        "frame:base_link": {
-          "visible": false
-        },
-        "frame:Middle_Base_1": {
-          "visible": false
-        },
-        "frame:Pinky_Base_1": {
-          "visible": false
-        },
-        "frame:Ring_Base_1": {
-          "visible": false
-        },
-        "frame:Thumb_Base_1": {
-          "visible": false
-        },
-        "frame:dynamixel_block": {
-          "visible": true
-        },
-        "frame:Pinky_2dof_joint_1": {
-          "visible": false
-        },
-        "frame:Ring_2dof_joint_1": {
-          "visible": false
-        },
-        "frame:Middle_2dof_joint_1": {
-          "visible": false
-        },
-        "frame:Index_2dof_joint_1": {
-          "visible": false
-        },
-        "frame:Pinky_Proximal_1": {
-          "visible": false
-        },
-        "frame:Ring_Proximal_1": {
-          "visible": false
-        },
-        "frame:Middle_Proximal_1": {
-          "visible": false
-        },
-        "frame:Index_Proximal_1": {
-          "visible": false
-        },
-        "frame:Thumb_Metacarpal_1": {
-          "visible": false
-        },
-        "frame:Pinky_Middle_1": {
-          "visible": false
-        },
-        "frame:Ring_Middle_1": {
-          "visible": false
-        },
-        "frame:Middle_Middle_1": {
-          "visible": false
-        },
-        "frame:Index_Middle_1": {
-          "visible": false
-        },
-        "frame:Thumb_Proximal_1": {
-          "visible": false
-        },
-        "frame:Pinky_Distal_1": {
-          "visible": false
-        },
-        "frame:Ring_Distal_1": {
-          "visible": false
-        },
-        "frame:Middle_Distal_1": {
-          "visible": false
-        },
-        "frame:Index_Distal_1": {
-          "visible": false
-        },
-        "frame:Thumb_Distal_1": {
-          "visible": false
-        },
-        "frame:Thumb_2dof_joint_1": {
-          "visible": false
-        },
-        "frame:horn_0_1": {
-          "visible": true
-        },
-        "frame:horn_1_1": {
-          "visible": false
-        },
-        "frame:horn_2_1": {
-          "visible": false
-        },
-        "frame:horn_3_1": {
-          "visible": false
-        },
-        "frame:horn_4_1": {
-          "visible": false
-        },
-        "frame:horn_5_1": {
-          "visible": false
-        },
-        "frame:horn_6_1": {
-          "visible": false
-        },
-        "frame:horn_7_1": {
-          "visible": false
-        },
-        "frame:horn_8_1": {
-          "visible": false
-        },
-        "frame:horn_9_1": {
-          "visible": false
-        },
-        "frame:horn_10_1": {
-          "visible": false
-        },
-        "frame:horn_11_1": {
-          "visible": false
-        },
-        "frame:seg1_mid_link_1": {
-          "visible": false
-        },
-        "frame:seg1_mid_link_2": {
-          "visible": false
-        },
-        "frame:seg1_mid_link_3": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_1": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_2": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_3": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_4": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_5": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_6": {
-          "visible": false
-        },
-        "frame:seg2_mid_link_7": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_1": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_2": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_3": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_4": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_5": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_6": {
-          "visible": false
-        },
-        "frame:seg3_mid_link_7": {
-          "visible": false
-        },
-        "frame:link_gripper": {
-          "visible": false
-        },
         "frame:link0": {
           "visible": false
         },
@@ -313,8 +65,7 @@
       },
       "topics": {
         "/robot_description": {
-          "visible": true,
-          "displayMode": "visual"
+          "visible": true
         }
       },
       "layers": {},
@@ -329,66 +80,213 @@
       },
       "imageMode": {}
     },
-    "CallService!2aib645": {
-      "requestPayload": "{\n  \"current\": -70.0\n}",
-      "layout": "vertical",
-      "serviceName": "/tendon_transmission_node/switch_to_current_control"
-    },
-    "Publish!31ewfnw": {
+    "Publish!2ofpjm7": {
       "buttonText": "Publish",
       "buttonTooltip": "",
       "advancedView": true,
-      "value": "{\n  \"data\": [0,0,0,0,0,0,0,0,0]\n}",
-      "datatype": "std_msgs/msg/Float64MultiArray",
-      "topicName": "/tendon_transmission_node/commands"
+      "value": "{\n  \"interface_names\": [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n  \"values\": [0.0, 0.0, 0.22]\n}",
+      "topicName": "/helix/command/configuration",
+      "datatype": "control_msgs/msg/InterfaceValue"
     },
-    "RawMessages!10alrjp": {
-      "diffEnabled": false,
-      "diffMethod": "previous message",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/helix_cartesian_control_node/cartesian_state"
+    "Publish!3ydn2as": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n  \"values\": [0.0, 1.59, 0.22]\n}",
+      "topicName": "/helix/command/configuration",
+      "datatype": "control_msgs/msg/InterfaceValue"
     },
-    "Tab!2zeje0v": {
-      "activeTabIdx": 0,
-      "tabs": [
+    "Publish!4l73s70": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"tendon6\", \"tendon7\", \"tendon8\"],\n  \"values\": [0.24, 0.23, 0.19]\n}",
+      "topicName": "/helix/command/tendon_lengths",
+      "datatype": "control_msgs/msg/InterfaceValue"
+    },
+    "Publish!aznjyb": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"tendon6\", \"tendon7\", \"tendon8\"],\n  \"values\": [0.2, 0.21, 0.23]\n}",
+      "topicName": "/helix/command/tendon_lengths",
+      "datatype": "control_msgs/msg/InterfaceValue"
+    },
+    "CallService!vc17zy": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "serviceName": "/helix/start_calibration"
+    },
+    "CallService!bz4wvt": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "serviceName": "/helix/finish_calibration"
+    },
+    "Plot!406fz6h": {
+      "paths": [
         {
-          "layout": {
-            "first": {
-              "first": "Plot!4c9yiqa",
-              "second": "Table!sp3lpe",
-              "direction": "row",
-              "splitPercentage": 27.000712883663248
-            },
-            "second": {
-              "first": {
-                "first": "3D!2mysn4t",
-                "second": {
-                  "first": "CallService!2aib645",
-                  "second": "Publish!31ewfnw",
-                  "direction": "column",
-                  "splitPercentage": 62.905982905982896
-                },
-                "direction": "row",
-                "splitPercentage": 53.83323467463278
-              },
-              "second": "RawMessages!10alrjp",
-              "direction": "row",
-              "splitPercentage": 70.93778381070497
-            },
-            "direction": "column",
-            "splitPercentage": 33.6734693877551
-          },
-          "title": "1"
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[0]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[1]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[2]",
+          "enabled": true
         }
-      ]
+      ],
+      "minYValue": 0.05,
+      "maxYValue": 0.15,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
+    },
+    "Plot!3d9xcgn": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[3]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[4]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[5]",
+          "enabled": true
+        }
+      ],
+      "minYValue": 0.1,
+      "maxYValue": 0.3,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
+    },
+    "Plot!1jwj4zq": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[6]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[7]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[8]",
+          "enabled": true
+        }
+      ],
+      "minYValue": 0.1,
+      "maxYValue": 0.3,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
     }
   },
-  "globalVariables": {},
-  "userNodes": {},
+  "globalVariables": {
+    "globalVariable": 4
+  },
+  "userNodes": {
+    "9eeb45d7-90ee-4274-8bbf-9b65a12864e2": {
+      "sourceCode": "// The ./types module provides helper types for your Input events and messages.\nimport { Input, Message } from \"./types\";\n\n// Define the global variables type - adjust the properties as needed for your global variables\ntype GlobalVariables = {\n  globalVariable: number; // Replace with your actual global variable name and type\n};\n\n// Define the output message type for the helix configuration\ntype HelixConfigOutput = {\n  interface_names: string[];\n  values: number[];\n};\n\n// Subscribe to any input topic (required even if we don't use it)\n// You can use any existing topic in your data source\nexport const inputs = [\"/input/topic\"];\n\n// Publish to the helix command configuration topic\nexport const output = \"/helix/command/configuration\";\n\n// This function is called with messages from input topics and has access to global variables\nexport default function script(\n  event: Input<\"/input/topic\">,\n  globalVars: GlobalVariables,\n): HelixConfigOutput {\n  // Get the slider value from global variables\n  const sliderValue = globalVars.globalVariable || 0.0;\n\n  // Return the configuration message with the variable second value\n  return {\n    interface_names: [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n    values: [0.0, sliderValue, 0.22],\n  };\n}\n",
+      "name": "9eeb45d7"
+    },
+    "1e564974-370d-4d79-9ef1-394dd6af5bc9": {
+      "sourceCode": "import { Input, Message } from \"./types\";\n\ntype Output = {};\n\nexport const inputs = [\"/topic\"];\nexport const output = \"/studio_script/output_topic\";\n\nexport default function script(event: Input<\"/topic\">): Output {\n  return {};\n};\n",
+      "name": "1e564974"
+    },
+    "a444aa65-ea49-42e2-997b-3b9523316ac5": {
+      "sourceCode": "// This example shows how to publish a Marker message from a User Script.\n//\n// Publishing Marker messages with a User Script is a good way to visualize non-visual\n// data.\n//\n// For example, if your robot calculates some projected paths and publishes them between two\n// subsystems as a message, you can make a script that visualizes the path as a line list marker and view it in the 3D\n// panel.\n\nimport { Input, Message } from \"./types\";\n\n// The `./markers` utility provides a helper function to build a Marker.\nimport { buildRosMarker, MarkerTypes } from \"./markers\";\n\ntype GlobalVariables = { id: number };\n\nexport const inputs = [\"/input/topic\"];\nexport const output = \"/studio_script/my_custom_topic\";\n\n// Our script will output a Marker message.\ntype Marker = Message<\"visualization_msgs/Marker\">;\n\n// If you want to output multiple markers for a single input message, use a MarkerArray.\n// The marker array message has one field, `markers`, which is an array of Marker messaages.\n// type MarkerArray = Message<\"visualization_msgs/MarkerArray\">;\n\nexport default function script(event: Input<\"/input/topic\">, globalVars: GlobalVariables): Marker {\n  return buildRosMarker({\n      // Add any fields you want to set in the marker here\n      // Any fields you omit will use default values\n      // e.g 'type: MarkerTypes.ARROW' */\n  });\n};\n",
+      "name": "a444aa65"
+    },
+    "aae77422-4573-45b1-b7cb-3c8e9aeceb2d": {
+      "sourceCode": "// This example shows how to subscribe to multiple input topics.\n//\n// NOTE:\n// User Scripts can subscribe to multiple input topics, but can only publish on a single topic.\n\nimport { Input } from \"./types\";\n\ntype Output = { topic: string };\ntype GlobalVariables = { id: number };\n\n// List all the input topics in the `input` array\nexport const inputs = [\"/input/topic\", \"/input/another\"];\nexport const output = \"/studio_script/output_topic\";\n\n// Make an InputEvent type alias. Since our script will get a message from either input topic, we need to enumerate the topics.\ntype InputEvent = Input<\"/input/topic\"> | Input<\"/input/another\">;\n\nexport default function script(event: InputEvent, globalVars: GlobalVariables): Output {\n  // Remember that your script will get messages on each topic, so you\n  // need to check each event's topic to know which fields are available on the message.\n  switch (event.topic) {\n    case \"/input/topic\":\n      // topic specific input logic\n      // Our message fields are specific to our topic message\n      break;\n    case \"/input/another\":\n      // another specific logic\n      break;\n  }\n\n  // Scripts can only output one type of message regardless of the inputs\n  // Here we echo back the input topic as an example.\n  return {\n    topic: event.topic,\n  };\n};\n",
+      "name": "aae77422"
+    },
+    "6855a396-663e-421c-afb4-d50df5f54aec": {
+      "sourceCode": "// This example shows how to publish a foxglove.LocationFix message\n//\n// https://foxglove.dev/docs/studio/messages/location-fix\n//\n// You can visualize this message with the Map panel\n// https://foxglove.dev/docs/studio/panels/map\n\nimport { Input } from \"./types\";\nimport { LocationFix, PositionCovarianceType } from \"@foxglove/schemas\";\n\nexport const inputs = [\"/input/topic\"];\nexport const output = \"/studio_script/my_gps\";\n\nexport default function script(event: Input<\"/input/topic\">): LocationFix {\n  return {\n    timestamp: event.receiveTime,\n    frame_id: \"frame\",\n    latitude: 51.477928,\n    longitude: -0.001545,\n    altitude: 0,\n    position_covariance_type: PositionCovarianceType.APPROXIMATED,\n    position_covariance: [0, 0, 0, 0, 0, 0, 0, 0, 0],\n  };\n}\n",
+      "name": "6855a396"
+    },
+    "91d074b2-163c-4d2d-ba4c-6b9963e433fb": {
+      "sourceCode": "// This example shows how to subscribe to multiple input topics.\n//\n// NOTE:\n// User Scripts can subscribe to multiple input topics, but can only publish on a single topic.\n\nimport { Input } from \"./types\";\n\ntype Output = { topic: string };\ntype GlobalVariables = { id: number };\n\n// List all the input topics in the `input` array\nexport const inputs = [\"/input/topic\", \"/input/another\"];\nexport const output = \"/studio_script/output_topic\";\n\n// Make an InputEvent type alias. Since our script will get a message from either input topic, we need to enumerate the topics.\ntype InputEvent = Input<\"/input/topic\"> | Input<\"/input/another\">;\n\nexport default function script(event: InputEvent, globalVars: GlobalVariables): Output {\n  // Remember that your script will get messages on each topic, so you\n  // need to check each event's topic to know which fields are available on the message.\n  switch (event.topic) {\n    case \"/input/topic\":\n      // topic specific input logic\n      // Our message fields are specific to our topic message\n      break;\n    case \"/input/another\":\n      // another specific logic\n      break;\n  }\n\n  // Scripts can only output one type of message regardless of the inputs\n  // Here we echo back the input topic as an example.\n  return {\n    topic: event.topic,\n  };\n};\n",
+      "name": "91d074b2"
+    }
+  },
   "linkedGlobalVariables": [],
   "playbackConfig": {
     "speed": 1
   },
-  "layout": "Tab!2zeje0v"
+  "layout": {
+    "first": {
+      "first": "3D!1jl2if2",
+      "second": {
+        "first": {
+          "first": "Publish!2ofpjm7",
+          "second": "Publish!3ydn2as",
+          "direction": "column",
+          "splitPercentage": 48.25174825174826
+        },
+        "second": {
+          "first": "Publish!4l73s70",
+          "second": "Publish!aznjyb",
+          "direction": "column",
+          "splitPercentage": 48.48484848484848
+        },
+        "direction": "row"
+      },
+      "direction": "column",
+      "splitPercentage": 65.5421686746988
+    },
+    "second": {
+      "first": {
+        "first": "CallService!vc17zy",
+        "second": "CallService!bz4wvt",
+        "direction": "row"
+      },
+      "second": {
+        "first": {
+          "first": "Plot!406fz6h",
+          "second": "Plot!3d9xcgn",
+          "direction": "column"
+        },
+        "second": "Plot!1jwj4zq",
+        "direction": "column",
+        "splitPercentage": 63.97134083930399
+      },
+      "direction": "column",
+      "splitPercentage": 21.77742193755004
+    },
+    "direction": "row",
+    "splitPercentage": 50.42907622412923
+  }
 }
