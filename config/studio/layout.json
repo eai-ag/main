@@ -3,13 +3,13 @@
     "3D!1jl2if2": {
       "cameraState": {
         "perspective": true,
-        "distance": 1.190771102106506,
-        "phi": 76.94480460961101,
-        "thetaOffset": -171.29342658190808,
+        "distance": 1.619894216343625,
+        "phi": 69.48158787684083,
+        "thetaOffset": -171.7716090557682,
         "targetOffset": [
-          0.195801520086328,
-          0.03397663753402855,
-          1.1545407186273318e-16
+          0.056445705424874607,
+          0.1084520528209587,
+          9.446030391541033e-17
         ],
         "target": [
           0,
@@ -128,6 +128,21 @@
       "requestPayload": "{}",
       "layout": "vertical",
       "serviceName": "/helix/finish_calibration"
+    },
+    "Indicator!3klgh57": {
+      "path": "/helix/status/node_count.data",
+      "style": "bulb",
+      "fallbackColor": "#d9ef00",
+      "fallbackLabel": "Initializing",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "8",
+          "color": "#68e24a",
+          "label": "Running"
+        }
+      ],
+      "lichtblickPanelTitle": "System Status"
     },
     "Plot!406fz6h": {
       "paths": [
@@ -335,8 +350,14 @@
     "second": {
       "first": {
         "first": "CallService!vc17zy",
-        "second": "CallService!bz4wvt",
-        "direction": "row"
+        "second": {
+          "first": "CallService!bz4wvt",
+          "second": "Indicator!3klgh57",
+          "direction": "row",
+          "splitPercentage": 60.258249641319935
+        },
+        "direction": "row",
+        "splitPercentage": 40.12419368986828
       },
       "second": {
         "first": {
@@ -362,9 +383,9 @@
         "splitPercentage": 53.81460086602073
       },
       "direction": "column",
-      "splitPercentage": 21.77742193755004
+      "splitPercentage": 28.961175236096537
     },
     "direction": "row",
-    "splitPercentage": 50.42907622412923
+    "splitPercentage": 50.477554918815656
   }
 }
