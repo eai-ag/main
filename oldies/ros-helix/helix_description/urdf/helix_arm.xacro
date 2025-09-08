@@ -1,0 +1,326 @@
+<?xml version="1.0" ?>
+<robot name="urdf_helix" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- URDF Representing the Helix arm -->
+
+<xacro:arg name="mesh_url" default="package://helix_description" />
+
+<link name="arm_base">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+<!-- Links for visualisation using floating discs, their transforms can be set manually -->
+
+<!-- First segment -->
+
+<joint name="seg1_mid_joint_1" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg1_mid_link_1"/>
+</joint>
+
+<link name="seg1_mid_link_1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg1_mid_joint_2" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg1_mid_link_2"/>
+</joint>
+
+<link name="seg1_mid_link_2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg1_mid_joint_3" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg1_mid_link_3"/>
+</joint>
+
+<link name="seg1_mid_link_3">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg1_end_joint" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg1_end_link"/>
+</joint>
+
+<link name="seg1_end_link">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+<!-- Second segment -->
+
+<joint name="seg2_mid_joint_1" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_1"/>
+</joint>
+
+<link name="seg2_mid_link_1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_2" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_2"/>
+</joint>
+
+<link name="seg2_mid_link_2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_3" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_3"/>
+</joint>
+
+<link name="seg2_mid_link_3">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_4" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_4"/>
+</joint>
+
+<link name="seg2_mid_link_4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_5" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_5"/>
+</joint>
+
+<link name="seg2_mid_link_5">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_6" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_6"/>
+</joint>
+
+<link name="seg2_mid_link_6">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_mid_joint_7" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_mid_link_7"/>
+</joint>
+
+<link name="seg2_mid_link_7">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg2_end_joint" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg2_end_link"/>
+</joint>
+
+<link name="seg2_end_link">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+<!-- Third segment -->
+
+<joint name="seg3_mid_joint_1" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_1"/>
+</joint>
+
+<link name="seg3_mid_link_1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_2" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_2"/>
+</joint>
+
+<link name="seg3_mid_link_2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_3" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_3"/>
+</joint>
+
+<link name="seg3_mid_link_3">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_4" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_4"/>
+</joint>
+
+<link name="seg3_mid_link_4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_5" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_5"/>
+</joint>
+
+<link name="seg3_mid_link_5">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_6" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_6"/>
+</joint>
+
+<link name="seg3_mid_link_6">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_mid_joint_7" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_mid_link_7"/>
+</joint>
+
+<link name="seg3_mid_link_7">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="clear"/>
+  </visual>
+</link>
+
+<joint name="seg3_end_joint" type="floating">
+  <parent link="arm_base"/>
+  <child link="seg3_end_link"/>
+</joint>
+
+<link name="seg3_end_link">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.03"/>
+      </geometry>
+    <material name="white"/>
+  </visual>
+</link>
+
+</robot>
