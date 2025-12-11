@@ -137,7 +137,7 @@
       "rules": [
         {
           "operator": "=",
-          "rawValue": "8",
+          "rawValue": "10",
           "color": "#68e24a",
           "label": "Running"
         }

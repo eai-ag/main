@@ -7,7 +7,7 @@ services:
     image: nginx
     volumes:
       - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./ros-helix-proprietary/helix_description/meshes:/usr/share/nginx/html/meshes
+      - ./ros-helix-proprietary/ros-packages/helix_description/meshes:/usr/share/nginx/html/meshes
     network_mode: "host"
     restart: always
 
