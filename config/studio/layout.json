@@ -3,13 +3,13 @@
     "3D!1jl2if2": {
       "cameraState": {
         "perspective": true,
-        "distance": 1.619894216343625,
-        "phi": 69.48158787684083,
-        "thetaOffset": -171.7716090557682,
+        "distance": 1.3888568037374944,
+        "phi": 64.69756619512403,
+        "thetaOffset": -148.07054144022032,
         "targetOffset": [
-          0.056445705424874607,
-          0.1084520528209587,
-          9.446030391541033e-17
+          0.23340814513278244,
+          0.34402130995358426,
+          1.0027539110044606e-16
         ],
         "target": [
           0,
@@ -79,6 +79,9 @@
       "topics": {
         "/robot_description": {
           "visible": true
+        },
+        "/initialpose": {
+          "visible": false
         }
       },
       "layers": {},
@@ -137,7 +140,7 @@
       "rules": [
         {
           "operator": "=",
-          "rawValue": "10",
+          "rawValue": "8",
           "color": "#68e24a",
           "label": "Running"
         }
@@ -174,36 +177,6 @@
       "sidebarDimension": 240,
       "followingViewWidth": 30
     },
-    "Plot!3d9xcgn": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[3]",
-          "enabled": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[4]",
-          "enabled": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[5]",
-          "enabled": true
-        }
-      ],
-      "minYValue": 0.1,
-      "maxYValue": 0.3,
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 30
-    },
     "Plot!1jwj4zq": {
       "paths": [
         {
@@ -219,6 +192,36 @@
         {
           "timestampMethod": "receiveTime",
           "value": "/helix/estimated/tendon_lengths.values[8]",
+          "enabled": true
+        }
+      ],
+      "minYValue": 0.1,
+      "maxYValue": 0.3,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
+    },
+    "Plot!3d9xcgn": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[3]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[4]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[5]",
           "enabled": true
         }
       ],
@@ -296,96 +299,325 @@
         "value": -1
       },
       "lichtblickPanelTitle": "Tip Orientation (xy-axis)"
+    },
+    "RosOut!ylwn5k": {
+      "searchTerms": [],
+      "minLogLevel": 2
+    },
+    "CallService!27fnkct": {
+      "requestPayload": "{\"data\": \"velocity_control\"}",
+      "layout": "vertical",
+      "serviceName": "/helix/dynamixel_driver_node/switch_control_mode"
+    },
+    "Teleop!3f7x1tn": {
+      "topic": "/web/command/dynamixel0",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel0"
+    },
+    "Teleop!3kebb81": {
+      "topic": "/web/command/dynamixel1",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel1"
+    },
+    "Teleop!3nzuoei": {
+      "topic": "/web/command/dynamixel2",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel2"
+    },
+    "Teleop!330ivjc": {
+      "topic": "/web/command/dynamixel3",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel3"
+    },
+    "Teleop!hl4hjg": {
+      "topic": "/web/command/dynamixel4",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel4"
+    },
+    "Teleop!36dzmh2": {
+      "topic": "/web/command/dynamixel5",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel5"
+    },
+    "Teleop!nxyg2s": {
+      "topic": "/web/command/dynamixel6",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel6"
+    },
+    "Teleop!1cji5ni": {
+      "topic": "/web/command/dynamixel7",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel7"
+    },
+    "Teleop!2g7fn20": {
+      "topic": "/web/command/dynamixel8",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "/web/command/dynamixel8"
+    },
+    "Tab!1u4cijz": {
+      "activeTabIdx": 1,
+      "tabs": [
+        {
+          "title": "Main",
+          "layout": {
+            "first": {
+              "first": {
+                "first": "3D!1jl2if2",
+                "second": {
+                  "first": "Publish!2ofpjm7",
+                  "second": "Publish!4l73s70",
+                  "direction": "row"
+                },
+                "direction": "column",
+                "splitPercentage": 76.70011148272017
+              },
+              "second": "Publish!3ydn2as",
+              "direction": "column",
+              "splitPercentage": 80.59299191374663
+            },
+            "second": {
+              "first": {
+                "first": "CallService!vc17zy",
+                "second": {
+                  "first": "CallService!bz4wvt",
+                  "second": "Indicator!3klgh57",
+                  "direction": "row"
+                },
+                "direction": "row",
+                "splitPercentage": 36.19281908872759
+              },
+              "second": {
+                "first": "Plot!406fz6h",
+                "second": {
+                  "first": {
+                    "first": "Plot!1jwj4zq",
+                    "second": "Plot!3d9xcgn",
+                    "direction": "column"
+                  },
+                  "second": {
+                    "first": "Teleop!4jc6mai",
+                    "second": {
+                      "first": "Teleop!3lk1t5k",
+                      "second": "Teleop!3pqx63y",
+                      "direction": "row"
+                    },
+                    "direction": "row"
+                  },
+                  "direction": "column",
+                  "splitPercentage": 66.20356150150276
+                },
+                "direction": "column",
+                "splitPercentage": 34.880285056272555
+              },
+              "direction": "column",
+              "splitPercentage": 28.505627254160693
+            },
+            "direction": "row"
+          }
+        },
+        {
+          "title": "Debug",
+          "layout": {
+            "first": {
+              "first": "RosOut!ylwn5k",
+              "second": "CallService!27fnkct",
+              "direction": "column",
+              "splitPercentage": 67.56513926325248
+            },
+            "second": {
+              "first": {
+                "first": "Teleop!3f7x1tn",
+                "second": {
+                  "first": "Teleop!3kebb81",
+                  "second": "Teleop!3nzuoei",
+                  "direction": "column"
+                },
+                "direction": "column",
+                "splitPercentage": 29.559748427672954
+              },
+              "second": {
+                "first": {
+                  "first": "Teleop!330ivjc",
+                  "second": {
+                    "first": "Teleop!hl4hjg",
+                    "second": "Teleop!36dzmh2",
+                    "direction": "column"
+                  },
+                  "direction": "column",
+                  "splitPercentage": 29.73944294699012
+                },
+                "second": {
+                  "first": "Teleop!nxyg2s",
+                  "second": {
+                    "first": "Teleop!1cji5ni",
+                    "second": "Teleop!2g7fn20",
+                    "direction": "column"
+                  },
+                  "direction": "column",
+                  "splitPercentage": 29.380053908355798
+                },
+                "direction": "row"
+              },
+              "direction": "row",
+              "splitPercentage": 35.44612384202827
+            },
+            "direction": "row"
+          }
+        }
+      ]
     }
   },
   "globalVariables": {
     "globalVariable": 4
   },
-  "userNodes": {
-    "9eeb45d7-90ee-4274-8bbf-9b65a12864e2": {
-      "sourceCode": "// The ./types module provides helper types for your Input events and messages.\nimport { Input, Message } from \"./types\";\n\n// Define the global variables type - adjust the properties as needed for your global variables\ntype GlobalVariables = {\n  globalVariable: number; // Replace with your actual global variable name and type\n};\n\n// Define the output message type for the helix configuration\ntype HelixConfigOutput = {\n  interface_names: string[];\n  values: number[];\n};\n\n// Subscribe to any input topic (required even if we don't use it)\n// You can use any existing topic in your data source\nexport const inputs = [\"/input/topic\"];\n\n// Publish to the helix command configuration topic\nexport const output = \"/helix/command/configuration\";\n\n// This function is called with messages from input topics and has access to global variables\nexport default function script(\n  event: Input<\"/input/topic\">,\n  globalVars: GlobalVariables,\n): HelixConfigOutput {\n  // Get the slider value from global variables\n  const sliderValue = globalVars.globalVariable || 0.0;\n\n  // Return the configuration message with the variable second value\n  return {\n    interface_names: [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n    values: [0.0, sliderValue, 0.22],\n  };\n}\n",
-      "name": "9eeb45d7"
-    },
-    "1e564974-370d-4d79-9ef1-394dd6af5bc9": {
-      "sourceCode": "import { Input, Message } from \"./types\";\n\ntype Output = {};\n\nexport const inputs = [\"/topic\"];\nexport const output = \"/studio_script/output_topic\";\n\nexport default function script(event: Input<\"/topic\">): Output {\n  return {};\n};\n",
-      "name": "1e564974"
-    },
-    "a444aa65-ea49-42e2-997b-3b9523316ac5": {
-      "sourceCode": "// This example shows how to publish a Marker message from a User Script.\n//\n// Publishing Marker messages with a User Script is a good way to visualize non-visual\n// data.\n//\n// For example, if your robot calculates some projected paths and publishes them between two\n// subsystems as a message, you can make a script that visualizes the path as a line list marker and view it in the 3D\n// panel.\n\nimport { Input, Message } from \"./types\";\n\n// The `./markers` utility provides a helper function to build a Marker.\nimport { buildRosMarker, MarkerTypes } from \"./markers\";\n\ntype GlobalVariables = { id: number };\n\nexport const inputs = [\"/input/topic\"];\nexport const output = \"/studio_script/my_custom_topic\";\n\n// Our script will output a Marker message.\ntype Marker = Message<\"visualization_msgs/Marker\">;\n\n// If you want to output multiple markers for a single input message, use a MarkerArray.\n// The marker array message has one field, `markers`, which is an array of Marker messaages.\n// type MarkerArray = Message<\"visualization_msgs/MarkerArray\">;\n\nexport default function script(event: Input<\"/input/topic\">, globalVars: GlobalVariables): Marker {\n  return buildRosMarker({\n      // Add any fields you want to set in the marker here\n      // Any fields you omit will use default values\n      // e.g 'type: MarkerTypes.ARROW' */\n  });\n};\n",
-      "name": "a444aa65"
-    },
-    "aae77422-4573-45b1-b7cb-3c8e9aeceb2d": {
-      "sourceCode": "// This example shows how to subscribe to multiple input topics.\n//\n// NOTE:\n// User Scripts can subscribe to multiple input topics, but can only publish on a single topic.\n\nimport { Input } from \"./types\";\n\ntype Output = { topic: string };\ntype GlobalVariables = { id: number };\n\n// List all the input topics in the `input` array\nexport const inputs = [\"/input/topic\", \"/input/another\"];\nexport const output = \"/studio_script/output_topic\";\n\n// Make an InputEvent type alias. Since our script will get a message from either input topic, we need to enumerate the topics.\ntype InputEvent = Input<\"/input/topic\"> | Input<\"/input/another\">;\n\nexport default function script(event: InputEvent, globalVars: GlobalVariables): Output {\n  // Remember that your script will get messages on each topic, so you\n  // need to check each event's topic to know which fields are available on the message.\n  switch (event.topic) {\n    case \"/input/topic\":\n      // topic specific input logic\n      // Our message fields are specific to our topic message\n      break;\n    case \"/input/another\":\n      // another specific logic\n      break;\n  }\n\n  // Scripts can only output one type of message regardless of the inputs\n  // Here we echo back the input topic as an example.\n  return {\n    topic: event.topic,\n  };\n};\n",
-      "name": "aae77422"
-    },
-    "6855a396-663e-421c-afb4-d50df5f54aec": {
-      "sourceCode": "// This example shows how to publish a foxglove.LocationFix message\n//\n// https://foxglove.dev/docs/studio/messages/location-fix\n//\n// You can visualize this message with the Map panel\n// https://foxglove.dev/docs/studio/panels/map\n\nimport { Input } from \"./types\";\nimport { LocationFix, PositionCovarianceType } from \"@foxglove/schemas\";\n\nexport const inputs = [\"/input/topic\"];\nexport const output = \"/studio_script/my_gps\";\n\nexport default function script(event: Input<\"/input/topic\">): LocationFix {\n  return {\n    timestamp: event.receiveTime,\n    frame_id: \"frame\",\n    latitude: 51.477928,\n    longitude: -0.001545,\n    altitude: 0,\n    position_covariance_type: PositionCovarianceType.APPROXIMATED,\n    position_covariance: [0, 0, 0, 0, 0, 0, 0, 0, 0],\n  };\n}\n",
-      "name": "6855a396"
-    },
-    "91d074b2-163c-4d2d-ba4c-6b9963e433fb": {
-      "sourceCode": "// This example shows how to subscribe to multiple input topics.\n//\n// NOTE:\n// User Scripts can subscribe to multiple input topics, but can only publish on a single topic.\n\nimport { Input } from \"./types\";\n\ntype Output = { topic: string };\ntype GlobalVariables = { id: number };\n\n// List all the input topics in the `input` array\nexport const inputs = [\"/input/topic\", \"/input/another\"];\nexport const output = \"/studio_script/output_topic\";\n\n// Make an InputEvent type alias. Since our script will get a message from either input topic, we need to enumerate the topics.\ntype InputEvent = Input<\"/input/topic\"> | Input<\"/input/another\">;\n\nexport default function script(event: InputEvent, globalVars: GlobalVariables): Output {\n  // Remember that your script will get messages on each topic, so you\n  // need to check each event's topic to know which fields are available on the message.\n  switch (event.topic) {\n    case \"/input/topic\":\n      // topic specific input logic\n      // Our message fields are specific to our topic message\n      break;\n    case \"/input/another\":\n      // another specific logic\n      break;\n  }\n\n  // Scripts can only output one type of message regardless of the inputs\n  // Here we echo back the input topic as an example.\n  return {\n    topic: event.topic,\n  };\n};\n",
-      "name": "91d074b2"
-    }
-  },
+  "userNodes": {},
   "linkedGlobalVariables": [],
   "playbackConfig": {
     "speed": 1
   },
-  "layout": {
-    "first": {
-      "first": "3D!1jl2if2",
-      "second": {
-        "first": {
-          "first": "Publish!2ofpjm7",
-          "second": "Publish!4l73s70",
-          "direction": "row"
-        },
-        "second": "Publish!3ydn2as",
-        "direction": "column",
-        "splitPercentage": 48.25174825174826
-      },
-      "direction": "column",
-      "splitPercentage": 65.5421686746988
-    },
-    "second": {
-      "first": {
-        "first": "CallService!vc17zy",
-        "second": {
-          "first": "CallService!bz4wvt",
-          "second": "Indicator!3klgh57",
-          "direction": "row",
-          "splitPercentage": 60.258249641319935
-        },
-        "direction": "row",
-        "splitPercentage": 40.12419368986828
-      },
-      "second": {
-        "first": {
-          "first": "Plot!406fz6h",
-          "second": "Plot!3d9xcgn",
-          "direction": "column"
-        },
-        "second": {
-          "first": "Plot!1jwj4zq",
-          "second": {
-            "first": "Teleop!4jc6mai",
-            "second": {
-              "first": "Teleop!3lk1t5k",
-              "second": "Teleop!3pqx63y",
-              "direction": "row"
-            },
-            "direction": "row",
-            "splitPercentage": 32.85261740945422
-          },
-          "direction": "column"
-        },
-        "direction": "column",
-        "splitPercentage": 53.81460086602073
-      },
-      "direction": "column",
-      "splitPercentage": 28.961175236096537
-    },
-    "direction": "row",
-    "splitPercentage": 50.477554918815656
-  }
+  "layout": "Tab!1u4cijz"
 }
