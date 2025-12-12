@@ -122,31 +122,6 @@
       "datatype": "control_msgs/msg/InterfaceValue",
       "lichtblickPanelTitle": "Reset to Calibration Pose"
     },
-    "CallService!vc17zy": {
-      "requestPayload": "{}",
-      "layout": "vertical",
-      "serviceName": "/helix/start_calibration"
-    },
-    "CallService!bz4wvt": {
-      "requestPayload": "{}",
-      "layout": "vertical",
-      "serviceName": "/helix/finish_calibration"
-    },
-    "Indicator!3klgh57": {
-      "path": "/helix/status/node_count.data",
-      "style": "bulb",
-      "fallbackColor": "#d9ef00",
-      "fallbackLabel": "Initializing",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "8",
-          "color": "#68e24a",
-          "label": "Running"
-        }
-      ],
-      "lichtblickPanelTitle": "System Status"
-    },
     "Plot!406fz6h": {
       "paths": [
         {
@@ -303,6 +278,16 @@
     "RosOut!ylwn5k": {
       "searchTerms": [],
       "minLogLevel": 2
+    },
+    "CallService!4654s9u": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "serviceName": "/helix/start_calibration"
+    },
+    "CallService!wqzxzt": {
+      "requestPayload": "{}",
+      "layout": "vertical",
+      "serviceName": "/helix/finish_calibration"
     },
     "CallService!27fnkct": {
       "requestPayload": "{\"data\": \"velocity_control\"}",
@@ -520,41 +505,27 @@
               "splitPercentage": 80.59299191374663
             },
             "second": {
-              "first": {
-                "first": "CallService!vc17zy",
-                "second": {
-                  "first": "CallService!bz4wvt",
-                  "second": "Indicator!3klgh57",
-                  "direction": "row"
-                },
-                "direction": "row",
-                "splitPercentage": 36.19281908872759
-              },
+              "first": "Plot!406fz6h",
               "second": {
-                "first": "Plot!406fz6h",
+                "first": {
+                  "first": "Plot!1jwj4zq",
+                  "second": "Plot!3d9xcgn",
+                  "direction": "column"
+                },
                 "second": {
-                  "first": {
-                    "first": "Plot!1jwj4zq",
-                    "second": "Plot!3d9xcgn",
-                    "direction": "column"
-                  },
+                  "first": "Teleop!4jc6mai",
                   "second": {
-                    "first": "Teleop!4jc6mai",
-                    "second": {
-                      "first": "Teleop!3lk1t5k",
-                      "second": "Teleop!3pqx63y",
-                      "direction": "row"
-                    },
+                    "first": "Teleop!3lk1t5k",
+                    "second": "Teleop!3pqx63y",
                     "direction": "row"
                   },
-                  "direction": "column",
-                  "splitPercentage": 66.20356150150276
+                  "direction": "row"
                 },
                 "direction": "column",
-                "splitPercentage": 34.880285056272555
+                "splitPercentage": 66.20356150150276
               },
               "direction": "column",
-              "splitPercentage": 28.505627254160693
+              "splitPercentage": 34.880285056272555
             },
             "direction": "row"
           }
@@ -563,7 +534,15 @@
           "title": "Debug",
           "layout": {
             "first": {
-              "first": "RosOut!ylwn5k",
+              "first": {
+                "first": "RosOut!ylwn5k",
+                "second": {
+                  "first": "CallService!4654s9u",
+                  "second": "CallService!wqzxzt",
+                  "direction": "row"
+                },
+                "direction": "column"
+              },
               "second": "CallService!27fnkct",
               "direction": "column",
               "splitPercentage": 67.56513926325248
