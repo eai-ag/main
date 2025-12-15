@@ -1,7 +1,0 @@
-string frame_id
-geometry_msgs/Pose goal_pose
-bool plan_linear
-bool ik_uses_prev
----
-bool success
-string message

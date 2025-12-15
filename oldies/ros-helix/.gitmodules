@@ -1,3 +1,0 @@
-[submodule "dynamixel_hardware"]
-	path = dynamixel_hardware
-	url = git@github.com:eai-ag/dynamixel_hardware.git
