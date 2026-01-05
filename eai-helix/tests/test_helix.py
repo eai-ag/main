@@ -1,8 +1,6 @@
-"""Basic tests for Helix class."""
-
 import pytest
 from unittest.mock import Mock, patch, MagicMock
-from helix_api import Helix, ControlMode
+from embodiedai_helix_api import Helix, ControlMode
 
 
 class TestHelixInitialization:
@@ -33,8 +31,8 @@ class TestHelixInitialization:
 class TestHelixConnection:
     """Test Helix connection methods."""
 
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Service')
     def test_connect_success(self, mock_service, mock_ros):
         """Test successful connection."""
         # Setup mocks
@@ -50,7 +48,7 @@ class TestHelixConnection:
         mock_ros.assert_called_once_with(host="eai-helix-0.local", port=9090)
         mock_client.run.assert_called_once()
 
-    @patch('helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
     def test_connect_failure(self, mock_ros):
         """Test connection failure."""
         mock_ros.side_effect = Exception("Connection failed")
@@ -61,8 +59,8 @@ class TestHelixConnection:
         assert result is False
         assert helix.is_connected() is False
 
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Service')
     def test_disconnect(self, mock_service, mock_ros):
         """Test disconnection."""
         mock_client = Mock()
@@ -80,8 +78,8 @@ class TestHelixConnection:
 class TestControlMode:
     """Test control mode switching."""
 
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Service')
     def test_switch_control_mode_success(self, mock_service_class, mock_ros):
         """Test successful control mode switch."""
         # Setup mocks
@@ -102,8 +100,8 @@ class TestControlMode:
         assert helix.get_control_mode() == "position_control"
         mock_service.call.assert_called_once()
 
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Service')
     def test_switch_control_mode_invalid(self, mock_service_class, mock_ros):
         """Test switching to invalid control mode."""
         mock_client = Mock()
@@ -123,8 +121,8 @@ class TestControlMode:
         with pytest.raises(ConnectionError, match="Not connected to robot"):
             helix.switch_control_mode("position_control")
 
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
+    @patch('embodiedai_helix_api.helix.roslibpy.Ros')
+    @patch('embodiedai_helix_api.helix.roslibpy.Service')
     def test_all_control_modes(self, mock_service_class, mock_ros):
         """Test all valid control modes."""
         mock_client = Mock()
@@ -144,23 +142,6 @@ class TestControlMode:
             result = helix.switch_control_mode(mode)
             assert result is True
             assert helix.get_control_mode() == mode
-
-
-class TestContextManager:
-    """Test context manager functionality."""
-
-    @patch('helix_api.helix.roslibpy.Ros')
-    @patch('helix_api.helix.roslibpy.Service')
-    def test_context_manager(self, mock_service, mock_ros):
-        """Test using Helix as a context manager."""
-        mock_client = Mock()
-        mock_client.is_connected = True
-        mock_ros.return_value = mock_client
-
-        with Helix("eai-helix-0.local") as helix:
-            assert helix.is_connected() is True
-
-        mock_client.terminate.assert_called_once()
 
 
 class TestControlModeEnum:

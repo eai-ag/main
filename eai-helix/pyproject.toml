@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "helix-api"
+name = "embodiedai-helix-api"
 version = "0.1.0"
 description = "A minimal Python package to control Helix robot arm via ROS"
 readme = "README.md"

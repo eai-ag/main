@@ -4,10 +4,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="helix-api",
+    name="embodiedai-helix-api",
     version="0.1.0",
-    author="EAI",
-    description="A minimal Python package to control Helix robot arm via ROS",
+    author="Embodied AI",
+    description="A Python package to control Embodied AI's Helix robot arm",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
