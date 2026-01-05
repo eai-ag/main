@@ -293,7 +293,7 @@
     "CallService!27fnkct": {
       "requestPayload": "{\"data\": \"velocity_control\"}",
       "layout": "vertical",
-      "serviceName": "/helix/dynamixel_driver_node/switch_control_mode"
+      "serviceName": "/helix/dynamixel_driver_node/set_control_mode"
     },
     "Teleop!3f7x1tn": {
       "topic": "/web/command/dynamixel0",
