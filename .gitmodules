@@ -13,3 +13,6 @@
 [submodule "ros-helix-proprietary"]
 	path = ros-helix-proprietary
 	url = git@github.com:eai-ag/ros-helix-proprietary.git
+[submodule "embodiedai-helix-sdk"]
+	path = embodiedai-helix-sdk
+	url = https://github.com/eai-ag/embodiedai-helix-sdk.git
