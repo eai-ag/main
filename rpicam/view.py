@@ -35,4 +35,4 @@ def view_stream(url='tcp://10.99.2.59:5000'):
         cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    vieg_stream()
+    view_stream()
