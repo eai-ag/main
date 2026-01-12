@@ -53,3 +53,37 @@ RUN apt-get update \
     \
     libpango1.0-dev \
     && rm -rf /var/lib/apt/lists/*
+
+
+# Install ROS2 Humble
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    python3-flake8-blind-except \
+    python3-flake8-class-newline \
+    python3-flake8-deprecated \
+    python3-mypy \
+    python3-pip \
+    python3-pytest \
+    python3-pytest-cov \
+    python3-pytest-mock \
+    python3-pytest-repeat \
+    python3-pytest-rerunfailures \
+    python3-pytest-runner \
+    python3-pytest-timeout \
+    python3-rosdep2 \
+    python3-colcon-core \
+    vcstool \
+    build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p ~/ros2_humble/src && cd ~/ros2_humble && \
+    wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos && \
+    vcs import src < ros2.repos && \
+    rosdep init && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src --rosdistro humble -y -r --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers python3-vcstool ignition-math6 ignition-cmake2 ignition-common3 ignition-transport8" && \
+    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF --symlink-install --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*example.*|.*demo.*|.*ignition.*|.*turtlesim.*|.*pendulum.*|.*dummy.*|.*test_.*'
+
+# Install gscam
+
