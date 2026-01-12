@@ -1,0 +1,21 @@
+
+libcamerasrc doesn't work with ubuntu 22.04, but requires debian trixie..
+debian trixie it works... also with CSI cameras
+
+dual pipeline with tee element works to stream images to ROS and via tcp.
+Atm it works with raw images ,but should also work with jpegs..
+
+Think about integrating this properly.
+
+
+TODO:
+
+debian trixie:
+compile libcamerasrc (as currently on the main branch)
+
+add ros2 humble to it (not sure how to do it)
+add gscam to it with custom pipeline
+
+done.
+
+
