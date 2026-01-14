@@ -75,15 +75,25 @@ RUN apt-get update \
     vcstool \
     build-essential \
     git \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p ~/ros2_humble/src && cd ~/ros2_humble && \
     wget https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos && \
     vcs import src < ros2.repos && \
-    rosdep init && \
     rosdep update && \
-    rosdep install --from-paths src --ignore-src --rosdistro humble -y -r --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers python3-vcstool ignition-math6 ignition-cmake2 ignition-common3 ignition-transport8" && \
-    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF --symlink-install --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*example.*|.*demo.*|.*ignition.*|.*turtlesim.*|.*pendulum.*|.*dummy.*|.*test_.*'
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive rosdep install  --default-yes  --from-paths src --ignore-src --rosdistro humble -y -r --skip-keys "fastcdr rti-connext-dds-6.0.1 urdfdom_headers python3-vcstool ignition-math6 ignition-cmake2 ignition-common3 ignition-transport8" || true && \
+    curl -s https://packagecloud.io/install/repositories/dirk-thomas/colcon/script.deb.sh | bash && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python3-colcon-common-extensions && \
+    rm -rf /var/lib/apt/lists/* && \
+    git clone -b ros2 https://github.com/ros-drivers/gscam src/gscam
+    
+RUN cd /root/ros2_humble && \
+    python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*ignition.*|.*turtlesim.*|.*ogre.*'
 
-# Install gscam
-
+RUN cd /root/ros2_humble && rm -rf build log src
+# # Install gscam
+# RUN cd ~/ros2_humble && \
+#     git clone -b ros2 https://github.com/ros-drivers/gscam src/gscam && \
+#     python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install --packages-select gscam
