@@ -90,9 +90,8 @@ RUN mkdir -p ~/ros2_humble/src && cd ~/ros2_humble && \
     git clone -b ros2 https://github.com/ros-drivers/gscam src/gscam
     
 RUN cd /root/ros2_humble && \
-    python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*ignition.*|.*turtlesim.*|.*ogre.*'
-
-RUN cd /root/ros2_humble && rm -rf build log src
+    python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*ignition.*|.*turtlesim.*|.*ogre.*' && \
+    rm -rf build log src
 
 COPY ./camera.launch.py /root/ros2_humble/install/gscam/share/gscam/examples/camera.launch.py
 

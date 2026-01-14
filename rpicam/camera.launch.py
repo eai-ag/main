@@ -6,23 +6,19 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
 
-    # GStreamer pipeline with tee for dual output
-    # Matches docker-compose pipeline with videocrop settings
     # Note: gscam automatically adds the appsink, so we define everything before it
-    gst_pipeline = (
-        'libcamerasrc ! '
-        'video/x-raw,width=1280,height=720,framerate=30/1 ! '
-        'videocrop left=270 right=290 ! '
-        'videoconvert ! '
-        'tee name=t '
-        't. ! queue ! jpegenc ! multipartmux ! tcpserversink host=0.0.0.0 port=5000'
-        't. ! queue ! videoconvert ! video/x-raw,format=RGB '
-    )
+
+    # Example segment for cropping
+    # ! jpegdec ! video/x-raw,width=1280,height=720 ! videocrop left=270 right=290 ! jpegenc
 
 
-    # gst_pipeline = "v4l2src ! video/x-raw,width=1280,height=720 ! videocrop left=270 right=290 ! tee name=t t. ! queue ! jpegenc ! multipartmux ! tcpserversink host=0.0.0.0 port=5000 t. ! queue ! videoconvert ! video/x-raw,format=RGB"
+    # # Full HD stream: 5MB/s
+    # gst_pipeline = "v4l2src ! image/jpeg,width=1920,height=1080,framerate=31/1 ! videorate ! image/jpeg,framerate=30/1 ! tee name=t t. ! queue ! multipartmux ! tcpserversink host=0.0.0.0 port=5000 t. ! queue ! jpegparse"
     
-asdf
+    # Low resolution stream (using libcamerasrc, which works also for CSI cameras)
+    gst_pipeline = "libcamerasrc ! image/jpeg,width=1280,height=720,framerate=60/1 ! videorate ! image/jpeg,framerate=30/1 ! tee name=t t. ! queue ! multipartmux ! tcpserversink host=0.0.0.0 port=5000 t. ! queue ! jpegparse"
+
+
     gscam_node = Node(
         package='gscam',
         executable='gscam_node',
@@ -32,14 +28,10 @@ asdf
             'camera_name': 'camera',
             'frame_id': 'camera',
             'camera_info_url': '',
-            'use_gst_timestamps': False,
-            'image_encoding': 'rgb8',
-            'sync_sink': True,
+            'use_gst_timestamps': False, # ???
+            'image_encoding': 'jpeg',
+            'sync_sink': False, # ???
         }],
-        remappings=[
-            ('camera/image_raw', 'image_raw'),
-            ('camera/camera_info', 'camera_info'),
-        ],
         output='screen'
     )
 
