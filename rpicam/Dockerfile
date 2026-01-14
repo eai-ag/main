@@ -93,7 +93,7 @@ RUN cd /root/ros2_humble && \
     python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-skip-regex '.*rviz.*|.*qt.*|.*gz.*|.*ignition.*|.*turtlesim.*|.*ogre.*'
 
 RUN cd /root/ros2_humble && rm -rf build log src
-# # Install gscam
-# RUN cd ~/ros2_humble && \
-#     git clone -b ros2 https://github.com/ros-drivers/gscam src/gscam && \
-#     python3 -m colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install --packages-select gscam
+
+COPY ./camera.launch.py /root/ros2_humble/install/gscam/share/gscam/examples/camera.launch.py
+
+RUN echo 'source /root/ros2_humble/install/setup.bash' >> /etc/bash.bashrc
