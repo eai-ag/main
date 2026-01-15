@@ -95,4 +95,12 @@ RUN cd /root/ros2_humble && \
 
 COPY ./camera.launch.py /root/ros2_humble/install/gscam/share/gscam/examples/camera.launch.py
 
-RUN echo 'source /root/ros2_humble/install/setup.bash' >> /etc/bash.bashrc
+RUN cp -R /root/ros2_humble /ros2_humble
+
+COPY ros_entrypoint.sh /ros_entrypoint.sh
+ENTRYPOINT ["/ros_entrypoint.sh"]
+
+RUN echo 'source /ros2_humble/install/setup.bash' >> /etc/bash.bashrc
+RUN echo 'alias build="colcon build --symlink-install  --event-handlers console_direct+"' >> /etc/bash.bashrc
+RUN echo 'source /ros2_humble/install/setup.bash; ros2 launch gscam camera.launch.py' >> /run.sh && chmod +x /run.sh
+RUN echo 'alias run="/run.sh"' >> /etc/bash.bashrc

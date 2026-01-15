@@ -23,6 +23,7 @@ def generate_launch_description():
         package='gscam',
         executable='gscam_node',
         name='gscam_driver',
+        namespace='helix',
         parameters=[{
             'gscam_config': gst_pipeline,
             'camera_name': 'camera',
