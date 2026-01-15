@@ -3,13 +3,13 @@
     "3D!1jl2if2": {
       "cameraState": {
         "perspective": true,
-        "distance": 0.831559871709902,
-        "phi": 68.68096868475143,
-        "thetaOffset": -118.19502276802278,
+        "distance": 1.2534432653696115,
+        "phi": 50.666723964993025,
+        "thetaOffset": -178.84106976619023,
         "targetOffset": [
-          0.3932668046565089,
-          0.18944301366041297,
-          8.473718209537829e-17
+          0.03257367748763375,
+          0.21920640360133442,
+          4.713549116379429e-17
         ],
         "target": [
           0,
@@ -98,30 +98,49 @@
       "imageMode": {},
       "followTf": "world"
     },
-    "Publish!2ofpjm7": {
-      "buttonText": "Publish",
-      "buttonTooltip": "",
-      "advancedView": true,
-      "value": "{\n  \"interface_names\": [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n  \"values\": [0.0, 0.0, 0.22]\n}",
-      "topicName": "/helix/command/configuration",
-      "datatype": "control_msgs/msg/InterfaceValue"
-    },
-    "Publish!4l73s70": {
-      "buttonText": "Publish",
-      "buttonTooltip": "",
-      "advancedView": true,
-      "value": "{\n  \"interface_names\": [\"tendon6\", \"tendon7\", \"tendon8\"],\n  \"values\": [0.24, 0.23, 0.19]\n}",
-      "topicName": "/helix/command/tendon_lengths",
-      "datatype": "control_msgs/msg/InterfaceValue"
-    },
-    "Publish!3ydn2as": {
-      "buttonText": "Publish",
-      "buttonTooltip": "",
-      "advancedView": true,
-      "value": "{\n  \"interface_names\": [\"segment0_dx\", \"segment0_dy\", \"segment0_l\", \"segment1_dx\", \"segment1_dy\", \"segment1_l\", \"segment2_dx\", \"segment2_dy\", \"segment2_l\"],\n  \"values\": [0.0, 0.0, 0.125, 0.0, 0.0, 0.25, 0.0, 0.0, 0.25]\n}",
-      "topicName": "/helix/command/configuration",
-      "datatype": "control_msgs/msg/InterfaceValue",
-      "lichtblickPanelTitle": "Reset to Calibration Pose"
+    "Image!1ao8u3s": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/helix/camera/image_raw/compressed"
+      }
     },
     "Plot!406fz6h": {
       "paths": [
@@ -143,6 +162,36 @@
       ],
       "minYValue": 0.05,
       "maxYValue": 0.15,
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
+    },
+    "Plot!3d9xcgn": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[3]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[4]",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/estimated/tendon_lengths.values[5]",
+          "enabled": true
+        }
+      ],
+      "minYValue": 0.1,
+      "maxYValue": 0.3,
       "showXAxisLabels": true,
       "showYAxisLabels": true,
       "showLegend": true,
@@ -183,35 +232,30 @@
       "sidebarDimension": 240,
       "followingViewWidth": 30
     },
-    "Plot!3d9xcgn": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[3]",
-          "enabled": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[4]",
-          "enabled": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/helix/estimated/tendon_lengths.values[5]",
-          "enabled": true
-        }
-      ],
-      "minYValue": 0.1,
-      "maxYValue": 0.3,
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 30
+    "Publish!4l73s70": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"tendon0\", \"tendon1\", \"tendon2\"],\n  \"values\": [0.08, 0.08, 0.08]\n}",
+      "topicName": "/helix/command/tendon_lengths",
+      "datatype": "control_msgs/msg/InterfaceValue"
+    },
+    "Publish!2ofpjm7": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"segment1_dx\", \"segment1_dy\", \"segment1_l\"],\n  \"values\": [1.57, 0.0, 0.195]\n}",
+      "topicName": "/helix/command/configuration",
+      "datatype": "control_msgs/msg/InterfaceValue"
+    },
+    "Publish!3ydn2as": {
+      "buttonText": "Publish",
+      "buttonTooltip": "",
+      "advancedView": true,
+      "value": "{\n  \"interface_names\": [\"segment0_dx\", \"segment0_dy\", \"segment0_l\", \"segment1_dx\", \"segment1_dy\", \"segment1_l\", \"segment2_dx\", \"segment2_dy\", \"segment2_l\"],\n  \"values\": [0.0, 0.0, 0.125, 0.0, 0.0, 0.25, 0.0, 0.0, 0.25]\n}",
+      "topicName": "/helix/command/configuration",
+      "datatype": "control_msgs/msg/InterfaceValue",
+      "lichtblickPanelTitle": "Reset to Calibration Pose"
     },
     "Teleop!4jc6mai": {
       "topic": "/web/teleop/xy",
@@ -293,91 +337,7 @@
     "CallService!27fnkct": {
       "requestPayload": "{\"data\": \"velocity_control\"}",
       "layout": "vertical",
-      "serviceName": "/helix/dynamixel_driver_node/set_control_mode"
-    },
-    "Teleop!3f7x1tn": {
-      "topic": "/web/command/dynamixel0",
-      "publishRate": 1,
-      "upButton": {
-        "field": "linear-x",
-        "value": 1
-      },
-      "downButton": {
-        "field": "linear-x",
-        "value": -1
-      },
-      "leftButton": {
-        "field": "angular-z",
-        "value": 1
-      },
-      "rightButton": {
-        "field": "angular-z",
-        "value": -1
-      },
-      "lichtblickPanelTitle": "dynamixel0"
-    },
-    "Teleop!3kebb81": {
-      "topic": "/web/command/dynamixel1",
-      "publishRate": 1,
-      "upButton": {
-        "field": "linear-x",
-        "value": 1
-      },
-      "downButton": {
-        "field": "linear-x",
-        "value": -1
-      },
-      "leftButton": {
-        "field": "angular-z",
-        "value": 1
-      },
-      "rightButton": {
-        "field": "angular-z",
-        "value": -1
-      },
-      "lichtblickPanelTitle": "dynamixel1"
-    },
-    "Teleop!3nzuoei": {
-      "topic": "/web/command/dynamixel2",
-      "publishRate": 1,
-      "upButton": {
-        "field": "linear-x",
-        "value": 1
-      },
-      "downButton": {
-        "field": "linear-x",
-        "value": -1
-      },
-      "leftButton": {
-        "field": "angular-z",
-        "value": 1
-      },
-      "rightButton": {
-        "field": "angular-z",
-        "value": -1
-      },
-      "lichtblickPanelTitle": "dynamixel2"
-    },
-    "Teleop!330ivjc": {
-      "topic": "/web/command/dynamixel3",
-      "publishRate": 1,
-      "upButton": {
-        "field": "linear-x",
-        "value": 1
-      },
-      "downButton": {
-        "field": "linear-x",
-        "value": -1
-      },
-      "leftButton": {
-        "field": "angular-z",
-        "value": 1
-      },
-      "rightButton": {
-        "field": "angular-z",
-        "value": -1
-      },
-      "lichtblickPanelTitle": "dynamixel3"
+      "serviceName": "/helix/dynamixel_driver_node/switch_control_mode"
     },
     "Teleop!nxyg2s": {
       "topic": "/web/command/dynamixel6",
@@ -400,8 +360,8 @@
       },
       "lichtblickPanelTitle": "dynamixel6"
     },
-    "Teleop!hl4hjg": {
-      "topic": "/web/command/dynamixel4",
+    "Teleop!3kebb81": {
+      "topic": "/web/command/dynamixel1",
       "publishRate": 1,
       "upButton": {
         "field": "linear-x",
@@ -419,7 +379,28 @@
         "field": "angular-z",
         "value": -1
       },
-      "lichtblickPanelTitle": "dynamixel4"
+      "lichtblickPanelTitle": "dynamixel1"
+    },
+    "Teleop!3f7x1tn": {
+      "topic": "/web/command/dynamixel0",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "dynamixel0"
     },
     "Teleop!1cji5ni": {
       "topic": "/web/command/dynamixel7",
@@ -441,6 +422,27 @@
         "value": -1
       },
       "lichtblickPanelTitle": "dynamixel7"
+    },
+    "Teleop!330ivjc": {
+      "topic": "/web/command/dynamixel3",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "dynamixel3"
     },
     "Teleop!36dzmh2": {
       "topic": "/web/command/dynamixel5",
@@ -484,6 +486,48 @@
       },
       "lichtblickPanelTitle": "dynamixel8"
     },
+    "Teleop!hl4hjg": {
+      "topic": "/web/command/dynamixel4",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "dynamixel4"
+    },
+    "Teleop!3nzuoei": {
+      "topic": "/web/command/dynamixel2",
+      "publishRate": 1,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      },
+      "lichtblickPanelTitle": "dynamixel2"
+    },
     "RawMessages!240bvzp": {
       "diffEnabled": false,
       "diffMethod": "custom",
@@ -494,51 +538,66 @@
         "interface_names": "c"
       }
     },
+    "RawMessages!4jr54c8": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/helix/state/dynamixels.position[:]",
+      "expansion": "none"
+    },
     "Tab!1u4cijz": {
-      "activeTabIdx": 1,
+      "activeTabIdx": 0,
       "tabs": [
         {
           "title": "Main",
           "layout": {
             "first": {
-              "first": {
-                "first": "3D!1jl2if2",
-                "second": {
-                  "first": "Publish!2ofpjm7",
-                  "second": "Publish!4l73s70",
-                  "direction": "row"
-                },
-                "direction": "column",
-                "splitPercentage": 76.70011148272017
-              },
-              "second": "Publish!3ydn2as",
+              "first": "3D!1jl2if2",
+              "second": "Image!1ao8u3s",
               "direction": "column",
-              "splitPercentage": 80.59299191374663
+              "splitPercentage": 49.04831625183016
             },
             "second": {
-              "first": "Plot!406fz6h",
-              "second": {
+              "first": {
                 "first": {
-                  "first": "Plot!1jwj4zq",
-                  "second": "Plot!3d9xcgn",
-                  "direction": "column"
+                  "first": "Plot!406fz6h",
+                  "second": {
+                    "first": "Plot!3d9xcgn",
+                    "second": "Plot!1jwj4zq",
+                    "direction": "column"
+                  },
+                  "direction": "column",
+                  "splitPercentage": 36.66997026759168
                 },
                 "second": {
-                  "first": "Teleop!4jc6mai",
+                  "first": "Publish!4l73s70",
                   "second": {
-                    "first": "Teleop!3lk1t5k",
-                    "second": "Teleop!3pqx63y",
-                    "direction": "row"
+                    "first": "Publish!2ofpjm7",
+                    "second": "Publish!3ydn2as",
+                    "direction": "column",
+                    "splitPercentage": 61.54949784791967
                   },
+                  "direction": "column",
+                  "splitPercentage": 30.921704658077303
+                },
+                "direction": "row",
+                "splitPercentage": 50.068828802090806
+              },
+              "second": {
+                "first": "Teleop!4jc6mai",
+                "second": {
+                  "first": "Teleop!3lk1t5k",
+                  "second": "Teleop!3pqx63y",
                   "direction": "row"
                 },
-                "direction": "column",
-                "splitPercentage": 66.20356150150276
+                "direction": "row"
               },
               "direction": "column",
-              "splitPercentage": 34.880285056272555
+              "splitPercentage": 80.01586042823156
             },
-            "direction": "row"
+            "direction": "row",
+            "splitPercentage": 44.0234375
           }
         },
         {
@@ -550,57 +609,63 @@
                 "second": {
                   "first": "CallService!4654s9u",
                   "second": "CallService!wqzxzt",
-                  "direction": "row"
+                  "direction": "row",
+                  "splitPercentage": 52.328181577817325
                 },
                 "direction": "column",
-                "splitPercentage": 56.504493763756415
+                "splitPercentage": 57.46036386958039
               },
               "second": "CallService!27fnkct",
               "direction": "column",
-              "splitPercentage": 67.56513926325248
+              "splitPercentage": 72.2462203023758
             },
             "second": {
               "first": {
                 "first": {
-                  "first": "Teleop!3f7x1tn",
+                  "first": "Teleop!nxyg2s",
                   "second": {
                     "first": "Teleop!3kebb81",
-                    "second": "Teleop!3nzuoei",
-                    "direction": "row",
-                    "splitPercentage": 52.29217033751501
+                    "second": "Teleop!3f7x1tn",
+                    "direction": "column"
                   },
-                  "direction": "row",
-                  "splitPercentage": 33.12977099236639
+                  "direction": "column",
+                  "splitPercentage": 35.1875808538163
                 },
                 "second": {
                   "first": {
-                    "first": "Teleop!330ivjc",
-                    "second": "Teleop!nxyg2s",
-                    "direction": "column"
+                    "first": "Teleop!1cji5ni",
+                    "second": {
+                      "first": "Teleop!330ivjc",
+                      "second": "Teleop!36dzmh2",
+                      "direction": "column"
+                    },
+                    "direction": "column",
+                    "splitPercentage": 35.058214747736095
                   },
                   "second": {
-                    "first": {
-                      "first": "Teleop!hl4hjg",
-                      "second": "Teleop!1cji5ni",
-                      "direction": "column"
-                    },
+                    "first": "Teleop!2g7fn20",
                     "second": {
-                      "first": "Teleop!36dzmh2",
-                      "second": "Teleop!2g7fn20",
+                      "first": "Teleop!hl4hjg",
+                      "second": "Teleop!3nzuoei",
                       "direction": "column"
                     },
-                    "direction": "row",
-                    "splitPercentage": 52.81385281385277
+                    "direction": "column",
+                    "splitPercentage": 35.316946959896505
                   },
                   "direction": "row",
-                  "splitPercentage": 32.671755725190835
+                  "splitPercentage": 52.29217033751501
                 },
-                "direction": "column",
-                "splitPercentage": 34.33098591549296
+                "direction": "row",
+                "splitPercentage": 33.12977099236639
               },
-              "second": "RawMessages!240bvzp",
+              "second": {
+                "first": "RawMessages!240bvzp",
+                "second": "RawMessages!4jr54c8",
+                "direction": "column",
+                "splitPercentage": 31.043256997455476
+              },
               "direction": "column",
-              "splitPercentage": 83.26133909287256
+              "splitPercentage": 66.295025728988
             },
             "direction": "row",
             "splitPercentage": 58.15718157181572
