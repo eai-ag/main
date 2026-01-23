@@ -1,6 +1,7 @@
 
 include:
   - ros-helix-proprietary/docker-compose.yml
+  - rpicam/docker-compose.yml
 
 services:
   nginx:

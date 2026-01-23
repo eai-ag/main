@@ -1,7 +1,5 @@
-
 services:  
   rpicam:
-    container_name: rpicam
     image: ghcr.io/eai-ag/rpicam:trixie
     build:
       context: .
