@@ -232,6 +232,34 @@
       "sidebarDimension": 240,
       "followingViewWidth": 30
     },
+    "Plot!2yckixk": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/state/ft_sensor/wrench.wrench.force.z",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/state/ft_sensor/wrench.wrench.force.y",
+          "enabled": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/helix/state/ft_sensor/wrench.wrench.force.x",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 30
+    },
     "Publish!4l73s70": {
       "buttonText": "Publish",
       "buttonTooltip": "",
@@ -256,6 +284,15 @@
       "topicName": "/helix/command/configuration",
       "datatype": "control_msgs/msg/InterfaceValue",
       "lichtblickPanelTitle": "Reset to Calibration Pose"
+    },
+    "CallService!3n7motq": {
+      "requestPayload": "{}",
+      "layout": "horizontal",
+      "lichtblickPanelTitle": "Reset Force-Torque Sensor",
+      "serviceName": "/helix/ft_sensor/reset",
+      "buttonText": "Reset Force-Torque Sensor",
+      "buttonTooltip": "",
+      "buttonColor": "#12ff02"
     },
     "Teleop!4jc6mai": {
       "topic": "/web/teleop/xy",
@@ -564,22 +601,33 @@
                   "first": "Plot!406fz6h",
                   "second": {
                     "first": "Plot!3d9xcgn",
-                    "second": "Plot!1jwj4zq",
-                    "direction": "column"
+                    "second": {
+                      "first": "Plot!1jwj4zq",
+                      "second": "Plot!2yckixk",
+                      "direction": "column",
+                      "splitPercentage": 56.25044976371096
+                    },
+                    "direction": "column",
+                    "splitPercentage": 34.417309571056066
                   },
                   "direction": "column",
-                  "splitPercentage": 36.66997026759168
+                  "splitPercentage": 27.438813967602044
                 },
                 "second": {
                   "first": "Publish!4l73s70",
                   "second": {
                     "first": "Publish!2ofpjm7",
-                    "second": "Publish!3ydn2as",
+                    "second": {
+                      "first": "Publish!3ydn2as",
+                      "second": "CallService!3n7motq",
+                      "direction": "column",
+                      "splitPercentage": 55.91100553151378
+                    },
                     "direction": "column",
-                    "splitPercentage": 61.54949784791967
+                    "splitPercentage": 34.56502334603914
                   },
                   "direction": "column",
-                  "splitPercentage": 30.921704658077303
+                  "splitPercentage": 27.438813967602044
                 },
                 "direction": "row",
                 "splitPercentage": 50.068828802090806
