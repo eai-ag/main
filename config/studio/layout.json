@@ -3,13 +3,13 @@
     "3D!1jl2if2": {
       "cameraState": {
         "perspective": true,
-        "distance": 1.2534432653696115,
-        "phi": 50.666723964993025,
-        "thetaOffset": -178.84106976619023,
+        "distance": 1.253443265369588,
+        "phi": 63.41008679685173,
+        "thetaOffset": 172.87574439310185,
         "targetOffset": [
-          0.03257367748763375,
-          0.21920640360133442,
-          4.713549116379429e-17
+          0.02869174300239935,
+          0.11818239107684853,
+          4.716099648437261e-17
         ],
         "target": [
           0,
@@ -371,6 +371,16 @@
       "layout": "vertical",
       "serviceName": "/helix/finish_calibration"
     },
+    "CallService!tflr9h": {
+      "requestPayload": "{\"data\": true}",
+      "layout": "vertical",
+      "serviceName": "/helix/toggle_demo"
+    },
+    "CallService!1o7lj5s": {
+      "requestPayload": "{\"data\": false}",
+      "layout": "vertical",
+      "serviceName": "/helix/toggle_demo"
+    },
     "CallService!27fnkct": {
       "requestPayload": "{\"data\": \"velocity_control\"}",
       "layout": "vertical",
@@ -580,7 +590,7 @@
       "diffMethod": "custom",
       "diffTopicPath": "",
       "showFullMessageForDiff": false,
-      "topicPath": "/helix/state/dynamixels.position[:]",
+      "topicPath": "/helix/state/dynamixels.effort[:]",
       "expansion": "none"
     },
     "Tab!1u4cijz": {
@@ -655,10 +665,17 @@
               "first": {
                 "first": "RosOut!ylwn5k",
                 "second": {
-                  "first": "CallService!4654s9u",
-                  "second": "CallService!wqzxzt",
-                  "direction": "row",
-                  "splitPercentage": 52.328181577817325
+                  "first": {
+                    "first": "CallService!4654s9u",
+                    "second": "CallService!wqzxzt",
+                    "direction": "row"
+                  },
+                  "second": {
+                    "first": "CallService!tflr9h",
+                    "second": "CallService!1o7lj5s",
+                    "direction": "row"
+                  },
+                  "direction": "row"
                 },
                 "direction": "column",
                 "splitPercentage": 57.46036386958039
