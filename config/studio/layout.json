@@ -386,6 +386,34 @@
       "layout": "vertical",
       "serviceName": "/helix/dynamixel_driver_node/set_control_mode"
     },
+    "CallService!gripopen": {
+      "requestPayload": "{}",
+      "layout": "horizontal",
+      "lichtblickPanelTitle": "Open Gripper",
+      "serviceName": "/helix/gripper/open",
+      "buttonText": "Open Gripper",
+      "buttonTooltip": "",
+      "buttonColor": "#12ff02"
+    },
+    "CallService!gripclose": {
+      "requestPayload": "{}",
+      "layout": "horizontal",
+      "lichtblickPanelTitle": "Close Gripper",
+      "serviceName": "/helix/gripper/close",
+      "buttonText": "Close Gripper",
+      "buttonTooltip": "",
+      "buttonColor": "#ff3b30"
+    },
+    "CallService!gripsetpos": {
+      "requestPayload": "{\"data\": 0.5}",
+      "layout": "horizontal",
+      "lichtblickPanelTitle": "Gripper Set Position",
+      "serviceName": "/helix/gripper/set_position",
+      "buttonText": "Set Gripper Position",
+      "buttonTooltip": "Set gripper position (0.0 = closed, 1.0 = open)",
+      "buttonColor": "#ff9500",
+      "advancedView": true
+    },
     "Teleop!nxyg2s": {
       "topic": "/web/command/dynamixel6",
       "publishRate": 1,
@@ -629,15 +657,30 @@
                     "first": "Publish!2ofpjm7",
                     "second": {
                       "first": "Publish!3ydn2as",
-                      "second": "CallService!3n7motq",
+                      "second": {
+                        "first": "CallService!3n7motq",
+                        "second": {
+                          "first": "CallService!gripopen",
+                          "second": {
+                            "first": "CallService!gripclose",
+                            "second": "CallService!gripsetpos",
+                            "direction": "row",
+                            "splitPercentage": 50
+                          },
+                          "direction": "row",
+                          "splitPercentage": 33.33
+                        },
+                        "direction": "column",
+                        "splitPercentage": 45
+                      },
                       "direction": "column",
-                      "splitPercentage": 55.91100553151378
+                      "splitPercentage": 40
                     },
                     "direction": "column",
-                    "splitPercentage": 34.56502334603914
+                    "splitPercentage": 30
                   },
                   "direction": "column",
-                  "splitPercentage": 27.438813967602044
+                  "splitPercentage": 22
                 },
                 "direction": "row",
                 "splitPercentage": 50.068828802090806
